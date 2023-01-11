@@ -4,8 +4,9 @@
     --primario: #ffc10f;
     --secundario: #0097a7;
     --gris: #757575;
+    --grisCaro: #DFE9F3;
 }
-
+/*** GLOBALES ***/
 html{
     font-size: 62.5%;
 }
@@ -17,7 +18,7 @@ html{
 body{
     font-size: 16px;
     font-family: 'Krub', sans-serif;
-
+    background-image: linear-gradient(to top, var(--grisCaro) 0%, var(--blanco) 100%);
 }
 
 h1{
@@ -27,7 +28,7 @@ h2{
     font-size: 2.8rem;
 }
 h3{
-    font-size: 1.8rem;
+    font-size: 1.8rem; 
 }
 
 h1,h2,h3{
@@ -38,9 +39,32 @@ h1,h2,h3{
     font-size: 2rem;
 }
 
+/*** UTILIDADES ***/
+
+.w-100{
+    width: 100%;
+}
+@media (min-width: 768px){
+      .w-100{
+        width: auto;
+      }
+}
+
 .contenedor {
     max-width: 120rem; 
     margin: 0 auto;
+}
+
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
 }
 
 .nav-bg {
@@ -58,6 +82,15 @@ h1,h2,h3{
     .navegacion-principal {
         flex-direction: row;
     }
+}
+
+.sombra{
+    -webkit-box-shadow: 1px 5px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 5px 15px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 5px 15px 0px rgba(0,0,0,0.75);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
 }
 
 .navegacion-principal a {
@@ -80,6 +113,7 @@ h1,h2,h3{
     height: 450px;
    
     position: relative;
+    margin-bottom: 2rem;
 }
 .contenido-hero{
     position: absolute;
@@ -95,4 +129,73 @@ h1,h2,h3{
 
 .contenido-hero h2, .contenido-hero p{
     color: var(--blanco);
+}
+
+.servicios{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 5rem;
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3{
+    color: var(--secundario);
+    font-weight: normal;
+}
+.servicio p{
+    line-height: 2;
+}
+
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.formulario{
+    background-color: var(--gris);
+    width: min(60rem, 100%); /*Utilizar el num mas pequeño*/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+.formulario fieldset{
+    border: none;
+}
+
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+.contenedor-campos{
+
+}
+.campo{
+    margin-bottom: 1rem;
+}
+
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
 }
